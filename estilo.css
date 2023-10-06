@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+/*480px se acomoda par pantalla de celular, 768px para una tablet, 1140px o 1400px para una laptop o computadora de escritorio*/
+/*seudo elemtos*/
+:root {
+  --blanco: #f9e3f1;
+  --oscuro: #212121;
+  --primario: #f379c6;
+  --secundario: #a7007a;
+  --gris: #757575;
+} /*SE DENOMINANA VARIABLES EN CSS y es una paleta de colores*/
+
+/*GLOBALES*/
+html {
+  font-size: 62.5%; /*reiniciamos el tamaño a ese porcentaje */
+  box-sizing: border-box; /*HACK PARA BOX MODEL*/
+  scroll-snap-type: y mandatory; /*esfecto scroll "y" es para arriba y la abajo - "x" para los lados */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; /* DESACE LA PROPIEDAD DE BOX MODEL*/
+}
+
+body {
+  font-size: 16px; /* 1rem=10px */
+  font-family: "Krub", sans-serif;
+  background-image: linear-gradient(
+    to top,
+    #dfe9f3 0%,
+    var(--blanco) 100%
+  ); /*hacer degrades el fondo de la pagina de abajo para arriba al utilizar to top*/
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem; /*agrega espascio en todo el contorno*/
+    margin-top: 3rem; /*separa el boton del texto anterior*/
+    margin-bottom: 3rem;
+    font-size: 2rem; /*tamaño de fuente*/
+    text-decoration: none; /*saca la linea de subrayado porque es un enlace*/
+    text-transform: uppercase; /*MAYUSCULA*/
+    font-weight: bold; /*NEGRITA*/
+    border-radius: 0.5rem; /*esquina redondeada*/
+    width: 90%; /*agrandar el boton cuando es responsivo y la pantalla es pequeña*/
+    text-align: center; /*centra el texto*/
+    border: none;
+  }
+  
+  .boton i{
+    padding: 1rem 1rem;
+  }
+  
+  @media (min-width: 780px) {
+    .boton {
+      width: auto;
+    }
+   
+  }
+  
+  .boton:hover {
+    cursor: pointer;
+  }
+  
+  .sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  h1 {
+    font-size: 3.8rem; /*euqivale a 38 px- los rem se adaptan mejor a muchos navegadores*/
+  }
+  
+  h2 {
+    font-size: 2.8rem; /*equivale 28px- los rem se adaptan mejor a muchos navegadores*/
+    color: var(--secundario);
+}
+  
+  h3 {
+    font-size: 1.8rem; /*equivale a 18px- los rem se adaptan mejor a muchos navegadores*/
+  }
+  
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    /*color:var(--primario) se llama a la variable antes creada*/
+  }
+  
+
+/**CONTACTO**/
+
+.formulario {
+    background-color: var(--gris);
+    width: min(30rem,100%); /**es utilizar el valor mas pequeño- es para darle el tamaño al formulario*/
+    margin: 0 auto; /* se usa para centrar cuando no tenes un display-flex y seo un tipo de elemento block*/
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .formulario fieldset {
+    border: none;
+  }
+  
+  .formulario legend {
+    text-align: right;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+  }
+  
+  @media (min-width: 768px) {
+    .contenedor-campos {
+      display: grid;
+      /*grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto 20rem;*/
+      column-gap: 1rem;
+    }
+  
+   
+  }
+  .contenedor-campos legend{
+    font-size: 1.8rem;
+    /*text-transform: uppercase; propiedad para hacer toda mayuscula*/
+    font-weight: 400;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    color: var(--primario);
+  }
+  
+  .campo-cont {
+    margin-bottom: 1rem;
+  }
+  
+  .campo-cont label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .campo-cont textarea {
+    height: 20rem;
+  }
+  
+  .input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }

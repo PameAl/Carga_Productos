@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de productos</title>
+    <link href="estilo.css" rel="stylesheet">
+</head>
+<body>
+    <section id="Contacto"><!--Contactos-->
+
+        <h2 class="titulos">Carga de productos</h2>
+        <form id="form" class="formulario" >
+            <fieldset>
+            <div class="contenedor-campos">
+                
+                <div class="campo-cont">
+                    <label for="name">Nombre<span>*</span></label>
+                    <input class="input-text" name="nombre" required type="text" id="nombre" placeholder="Nombre">
+                </div>
+
+                <div class="campo-cont">
+                    <label for="telefono">Descripción<span>*</span></label>
+                    <input class="input-text" name="descripcion" type="tel" id="descripcion" required placeholder="Descripción">
+                </div>
+
+                <div class="campo-cont">
+                    <label for="email">Cantidad<span>*</span></label>
+                    <input class="input-text" name="cantidad" type="text" id="cantidad" required placeholder="Cantidad">
+                </div>
+                
+            </div> <!-- fin contenedor-campos-->
+
+            <div class="alinear-derecha flex">
+                <button class="boton w-sm-100" type="button" onclick="post()">Enviar</button>
+                
+            </div>
+        </fieldset>
+    </form>
+</section>
+
+<!--Traer Imagen-->
+<div class="container-sm">
+<!--<h1>Traer Imagen</h1>-->
+    
+  <button type="button" class="boton" onclick="getProductos()">Ver productos</button>
+    
+</div>
+  
+<div id="div" class="formulario">
+    <table id="tabla-productos">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los datos de la tabla se insertarán aquí dinámicamente desde JavaScript -->
+        </tbody>
+      </table>
+      
+</div>
+
+<script src="api.js"></script>
+</body>
+</html>
