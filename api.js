@@ -46,20 +46,23 @@ function getProductos() {
   fetch("https://snp0h1z7-3000.brs.devtunnels.ms/productos", requestOptions)
     .then((response) => response.json())
     .then((data) => {
+      
       const tablaProductos = document.getElementById("tabla-productos");
       const tbody = tablaProductos.querySelector("tbody");
 
       // Limpia el contenido existente en la tabla
       tbody.innerHTML = "";
 
-      data.forEach((producto) => {
+      data[0].forEach((producto) => {
+ 
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td>${producto.id}</td>
-          <td>${producto.nombre}</td>
-          <td>${producto.descripcion}</td>
-          <td>${producto.cantidad}</td>
+          <td>${producto.id_producto}</td>
+          <td>${producto.Nombre}</td>
+          <td>${producto.Descripcion}</td>
+          <td>${producto.Cantidad}</td>
         `;
+        console.log(producto)
         tbody.appendChild(row);
       });
     })

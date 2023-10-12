@@ -97,6 +97,8 @@ body {
 /**CONTACTO**/
 
 .formulario {
+    display: flex;
+    flex-direction: column;
     background-color: var(--gris);
     width: min(30rem,100%); /**es utilizar el valor mas pequeño- es para darle el tamaño al formulario*/
     margin: 0 auto; /* se usa para centrar cuando no tenes un display-flex y seo un tipo de elemento block*/
