@@ -15,7 +15,7 @@ function post() {
         body: formData,
       })
         .then((response) => response.json())
-        .then((json) => {
+        .then((json) => {s
             console.log(json);
             console.log(json.status);  
 
