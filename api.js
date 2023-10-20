@@ -1,19 +1,28 @@
+const RutaApi = "https://snp0h1z7-3000.brs.devtunnels.ms"
 
 //Método POST
 function post() {
-      let nombre = document.getElementById("nombre").value;
-      let descripcion = document.getElementById("descripcion").value;
-      let cantidad = document.getElementById("cantidad").value;
+      let Nombre = document.getElementById("Nombre").value;
+      let Descripcion = document.getElementById("Descripcion").value;
+      let Cantidad = document.getElementById("Cantidad").value;
 
-      const formData = new FormData();
-      formData.append("nombre", nombre);
-      formData.append("descripcion", descripcion);
-      formData.append("cantidad", cantidad);
 
-      fetch("https://snp0h1z7-3000.brs.devtunnels.ms/productos", {
-        method: "POST",
-        body: formData,
-      })
+      const data = JSON.stringify({
+        Nombre,
+        Descripcion,
+        Cantidad
+     });
+
+       const requestOptions = {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: data,
+          //redirect: "follow"
+       };
+
+      fetch(`${RutaApi}/productos`, requestOptions)
         .then((response) => response.json())
         .then((json) => {s
             console.log(json);
@@ -29,13 +38,10 @@ function post() {
           console.log("error", error);
         });
     }
+
 //Método GET
 function getProductos() {
-  // var requestOptions = {
-  //   method: "GET",
-  //   redirect: "follow",
 
-  // };
   const requestOptions = {
     method: "GET",
     headers: {
@@ -43,7 +49,7 @@ function getProductos() {
     },
     redirect: "follow",
 };
-  fetch("https://snp0h1z7-3000.brs.devtunnels.ms/productos", requestOptions)
+  fetch(`${RutaApi}/productos`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       
